@@ -1,0 +1,110 @@
+* {margin: 0; padding: 0;box-sizing: border-box;}
+html{overflow-y: scroll;}
+html, body{height: 100%; font-size: 16px;}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+}
+#root{
+    height: 100%;
+}
+.app{
+    padding: 15px 10px;
+    background-color: #c1c1c1;
+    min-height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: minmax(450px, 1fr) minmax(450px, 1fr);
+}
+.left-panel{
+    background-color: #ecebeb;
+    border: 2px solid #78b7ff;
+    max-height: 100%;
+    max-width: 100%;
+    &__header{
+        padding: 15px 20px;
+        min-height: 30px;
+        background-color: #52a1fc;
+        color: #FFF;
+    }
+    &__body{
+        padding: 15px 20px;
+    }
+}
+.pacient-data{
+    display: flex;
+    flex-direction: column;
+    & div{
+        margin-bottom: 10px;
+    }
+    & div span{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    & div span:nth-child(odd){
+        color: #605555;
+    }
+    & div span:nth-child(even){
+        border-bottom: 1px solid gray;
+    }
+}
+.pacient-table{
+    &__header{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: #999999;
+        padding: 10px;
+        border-bottom: 1px solid gray;
+    }
+    &__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 10px;
+        border-bottom: 1px solid gray;
+        color:#605555;
+        cursor: pointer;
+        position: relative;
+        &:hover{
+            background-color: rgb(211, 211, 211);
+        }
+        &:hover::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #52a1fc;
+        }
+    }
+}
+.right-panel{
+    background-color: #ecebeb;
+    border: 2px solid #9b9b9b;
+    max-height: 100%;
+    max-width: 100%;
+    &__header{
+        min-height: 30px;
+        background-color: #dddddd;
+        color: #373737;
+    }
+    &__btn{
+        text-transform: uppercase;
+        padding: 15px 20px;
+    }
+    &__btn--active{
+        border-bottom: 2px solid #78b7ff;
+    }
+}
